@@ -7,11 +7,12 @@ class Note {
   final RxString title;
   final Color color;
   final RxBool isDone;
+
   static final RxBool isLoading = false.obs;
   static final RxBool isSaving = false.obs;
-
   static RxList<Note> notes = <Note>[].obs;
   static RxString typed = ''.obs;
+
 
   Note(String text, [bool? isDone])
 

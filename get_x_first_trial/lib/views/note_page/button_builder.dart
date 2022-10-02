@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 import 'note.dart';
@@ -26,17 +25,16 @@ class ButtonBuilder extends StatelessWidget {
                 newTitle: titleController.text, newText: textController.text);
           },
           style: ButtonStyle(
-              shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                  RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(10.0),
-              )),
-              backgroundColor:
-                  MaterialStateProperty.all(Color.fromARGB(255, 0, 204, 255)),
-              // padding: MaterialStateProperty.all(
-              //     const EdgeInsets.all(10)),
-              textStyle: MaterialStateProperty.all(
-                  const TextStyle(fontSize: 20, color: Color(0xff040a22)))),
-          child: const Text('Save changes')),
+            shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(10.0),
+            )),
+            backgroundColor: MaterialStateProperty.all(widget.note.color),
+          ),
+          child: const Text(
+            'Save changes',
+            style: TextStyle(fontSize: 20, color: Color(0xff040a22)),
+          )),
     );
   }
 }
